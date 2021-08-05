@@ -1,0 +1,1 @@
+Simple container running ansible.
