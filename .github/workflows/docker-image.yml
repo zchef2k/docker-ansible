@@ -1,8 +1,10 @@
-name: Create and publish a Docker image
+name: Docker Image CI
 
 on:
   push:
-    branches: ['release']
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 env:
   REGISTRY: ghcr.io
