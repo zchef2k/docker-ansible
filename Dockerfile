@@ -12,5 +12,4 @@ RUN yum check-update; \
     yum clean all
 
 RUN pip3 install --upgrade pip; \
-    pip3 install "ansible"; \
-    systemctl enable sshd;
+    pip3 install "ansible";
