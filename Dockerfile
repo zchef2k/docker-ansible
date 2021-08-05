@@ -1,7 +1,7 @@
+FROM centos:7
+
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-
-FROM centos:7
 
 EXPOSE 22/tcp
 
@@ -13,4 +13,4 @@ RUN yum check-update; \
 
 RUN pip3 install --upgrade pip; \
     pip3 install "ansible"; \
-    systemctl enable sshd; \
+    systemctl enable sshd;
