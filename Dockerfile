@@ -23,7 +23,7 @@ RUN sed -i '/^#Port 22/s/^#//' /etc/ssh/sshd_config; \
 
 RUN useradd -u 1000 ansible -d /opt/ansible; \
     mkdir /opt/ansible/.ssh; \
-    chown ansible:ansible /opt/ansbible/.ssh; \
+    chown ansible:ansible /opt/ansible/.ssh; \
     chmod 700 /opt/ansible/.ssh;
 
 RUN pip3 install --upgrade pip; \
