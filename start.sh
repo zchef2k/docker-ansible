@@ -4,7 +4,7 @@
 echo "$ANSIBLE_PASSWORD" | passwd --stdin ansible
 
 # kubernetes mounted secrets have bad ownership and perms. fix that here:
-cat /opt/ansible/.ssh/id_rsa_temp /opt/ansible/.ssh/id_rsa 
+cat /opt/ansible/temp/id_rsa >> /opt/ansible/.ssh/id_rsa 
 chown ansible:ansible /opt/ansible/.ssh/id_rsa
 chmod 600 /opt/ansible/.ssh/id_rsa
 
