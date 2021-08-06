@@ -9,7 +9,8 @@ RUN yum check-update; \
     yum install -y gcc libffi-devel python3 epel-release; \
     yum install -y python3-pip; \
     yum install -y wget; \
-    yum install -y openssh-server\
+    yum install -y openssh-server \
+    yum install -y openssh-clients \
     yum clean all
 
 RUN sed -i '/^#Port 22/s/^#//' /etc/ssh/sshd_config; \
