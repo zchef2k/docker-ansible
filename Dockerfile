@@ -21,7 +21,10 @@ RUN sed -i '/^#Port 22/s/^#//' /etc/ssh/sshd_config; \
     sed -i '/_ed25519_key/d' /etc/ssh/sshd_config; \
     sed -i -e '$aAllowUsers ansible' /etc/ssh/sshd_config;
 
-RUN useradd -u 1000 ansible -d /opt/ansible
+RUN useradd -u 1000 ansible -d /opt/ansible; \
+    mkdir /opt/ansible/.ssh; \
+    chown ansible:ansible /opt/ansbible/.ssh; \
+    chmod 700 /opt/ansible/.ssh;
 
 RUN pip3 install --upgrade pip; \
     pip3 install "ansible";
