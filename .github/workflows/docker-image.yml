@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   pull_request:
-    branches: [ release ]
+    branches: [ master ]
 
 env:
   REGISTRY: ghcr.io
@@ -38,4 +38,4 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-ansible:latest
-          labels: ${{ steps.vars.outputs.sha_short }}"
+          labels: ${{ steps.vars.outputs.sha_short }}
