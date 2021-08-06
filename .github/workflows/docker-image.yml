@@ -37,5 +37,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-ansible:latest
+          labels: ${{ steps.vars.outputs.sha_short }}"
